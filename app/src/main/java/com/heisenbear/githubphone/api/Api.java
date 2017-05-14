@@ -1,8 +1,6 @@
 package com.heisenbear.githubphone.api;
 
 import com.heisenbear.githubphone.repo.Repo;
-import com.heisenbear.githubphone.search.Item;
-import com.heisenbear.githubphone.search.SearchLister;
 import com.heisenbear.githubphone.user.User;
 
 import org.json.JSONArray;

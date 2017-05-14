@@ -1,12 +1,10 @@
 package com.heisenbear.githubphone.user;
 
-import com.heisenbear.githubphone.search.Item;
-
 /**
  * Created by rorod on 13/05/2017.
  */
 
-public class User extends Item {
+public class User {
     private String avatar;
     private String name = "No Name";
     private String location = "Somewhere";

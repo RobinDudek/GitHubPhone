@@ -1,12 +1,10 @@
 package com.heisenbear.githubphone.repo;
 
-import com.heisenbear.githubphone.search.Item;
-
 /**
  * Created by rorod on 13/05/2017.
  */
 
-public class Repo extends Item {
+public class Repo {
     private String name = "Something";
     private String owner = "Someone";
     private String language = "Unknown Language";

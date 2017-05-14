@@ -25,7 +25,7 @@ public class SearchFragment extends Fragment {
     private Button buttonFilterUsers;
     private EditText searchText;
     private Button searchButton;
-    private ListView apiSearchList;
+    private ListView searchList;
     private SearchLister.Filter activeFilter;
 
 
@@ -49,19 +49,13 @@ public class SearchFragment extends Fragment {
         return rootView;
     }
 
-    /*private void setListAdapter(SearchLister.Filter filter) {
-        apiSearchList.setAdapter(new SearchListViewAdapter(getActivity(), R.layout.grid_item_layout, listMedia(filter)));
-    }*/
-
     private void initializeView(View rootView) {
         initializeFilterButtons(rootView);
         searchText = (EditText) rootView.findViewById(R.id.searchText);
         searchButton = (Button) rootView.findViewById(R.id.searchButton);
         searchButton.setOnClickListener(new searchTask());
 
-        apiSearchList = (ListView) rootView.findViewById(R.id.searchResults);
-        /*SearchAdapter searchAdapter = new SearchAdapter(this, apiSearchList);
-        apiSearchList.setAdapter(searchAdapter);*/
+        searchList = (ListView) rootView.findViewById(R.id.searchResults);
 
     }
 
@@ -114,7 +108,7 @@ public class SearchFragment extends Fragment {
                 {
                     Api api = new Api("search/repositories?q="+searchText.getText().toString());
                     api.callApi();
-                    apiSearchList.setAdapter(new RepoItemAdapter(getContext(), api.getRepos()));
+                    searchList.setAdapter(new RepoItemAdapter(getContext(), api.getRepos()));
                     Toast toast = Toast.makeText(getContext(), api.getJsonString() , Toast.LENGTH_LONG);
                     toast.show();
                 }
@@ -122,7 +116,7 @@ public class SearchFragment extends Fragment {
                 {
                     Api api = new Api("search/users?q="+searchText.getText().toString());
                     api.callApi();
-                    apiSearchList.setAdapter(new UserItemAdapter(getActivity(), api.getUsers()));
+                    searchList.setAdapter(new UserItemAdapter(getActivity(), api.getUsers()));
                 }
             }
         }

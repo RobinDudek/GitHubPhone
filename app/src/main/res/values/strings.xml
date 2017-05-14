@@ -19,4 +19,8 @@
     </string>
     <string name="repo">Repositories</string>
     <string name="user">Users</string>
+    <string name="add">Add</string>
+    <string name="gists">Gists</string>
+    <string name="team">Teams</string>
+    <string name="profile">Profile</string>
 </resources>
